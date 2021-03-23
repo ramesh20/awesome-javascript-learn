@@ -1,11 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-function App() {
+
+const App = () => {
+	const state = useState();
+	// console.log(state);
+
+	let [count, setCount] =  useState(0);
+
+	// let count = 0;
+	const IncNum = () => {
+		setCount(count + 1);
+		// console.log("clicked " + count++);
+	}
+
+	const DecNum = () => {
+		setCount(count - 1);
+
+		if(count == 0) {
+			setCount(0);
+		}
+	}
+
 	return(
-		<div className="title__holder">
-			<h1>Hello world</h1>
-			<h2>Second Title</h2>
-		</div>
+		<React.Fragment>
+			<h1> { count } </h1>
+			<button onClick={ IncNum }> Increment </button>
+			<button onClick={ DecNum }> Decrement </button>
+		</React.Fragment>
 	);
 }
 
