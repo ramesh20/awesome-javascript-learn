@@ -1,11 +1,21 @@
 import React from 'react';
+import Card from './component/Card'
+import rawData from './component/Data'
+
+function ncard(val, ind, arr) {
+	return(
+		<Card
+			cardtitle = { val.ctitle }
+			cardaddress = { val.caddress }
+			cardurl = { val.curl }
+			cardimage = { val.cimage }
+		/>
+	);
+}
 
 function App() {
 	return(
-		<div className="title__holder">
-			<h1>Hello world</h1>
-			<h2>Second Title</h2>
-		</div>
+		rawData.map(ncard)
 	);
 }
 
