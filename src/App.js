@@ -2,26 +2,39 @@ import React, { useState } from 'react';
 import './scss/App.scss';
 
 const App = () => {
-	// let name = '';
-	const [cname, setCname] = useState("");
-	const [fullName, setFullName] = useState();
+	const [fname, setFname] = useState("");
+	const [password, setPassword] = useState("");
+
+	const [firstName, setFirstName] = useState();
+	const [updatePassword, setUpdatePassword] = useState();
+
 	const inputEvent = (event) => {
 		// console.log(event.target.value);
-		setCname(event.target.value);
+		setFname(event.target.value);
 	}
 
-	const onSubmit = () => {
-		setFullName(cname);
+	const inputEventTwo = (event) => {
+		// console.log(event.target.value);
+		setPassword(event.target.value);
+	}
+
+	const onSubmits = (event) => {
+		event.preventDefault();
+		setFirstName(fname);
+		setUpdatePassword(password);
 	}
 
 
 	return(
 		<>
-			<div className="wrapper">
-				<h1>Hello { fullName }</h1>
-				<input type="text" placeholder="Enter your name" onChange = { inputEvent } value={cname} />
-				<button onClick = { onSubmit }>Click Me</button>
-			</div>
+			<form onSubmit = {onSubmits} method="post">
+				<div className="wrapper">
+					<h1>Hello { firstName } { updatePassword }</h1>
+					<input type="text" placeholder="User Name" onChange = { inputEvent } value={fname} />
+					<input type="password" placeholder="Password" onChange = { inputEventTwo } value={password} />
+					<button type="submit">Click Me</button>
+				</div>
+			</form>
 		</>
 	);
 }
