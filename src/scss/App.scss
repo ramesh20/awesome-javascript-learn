@@ -28,15 +28,30 @@ h1 {
     text-align: center;
 }
 
+input[type="text"] {
+    margin: 0;
+    padding: 4px 10px;
+    min-width: 400px;
+    height: 44px;
+    background: #e9e9e9;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 button {
-    max-width: 200px;
+    min-width: 400px;
     background: #ffe318;
     border: none;
     display: block;
     width: 200px;
     font-size: 20px;
     padding: 14px 10px;
-    margin: 60px auto 0;
+    margin: 30px auto 0;
     color: #000;
     cursor: pointer;
 
