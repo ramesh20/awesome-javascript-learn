@@ -1,23 +1,28 @@
-import {React, useState } from 'react';
-
-
+import React, { useState } from 'react';
+import './scss/App.scss'
 
 const App = () => {
-	let newTime = new Date().toLocaleTimeString();
-	const [ctime, setCtime] = useState(newTime);
+	const purple = '#800080';
+	const [bg, setBg] = useState(purple);
+	const [name, setName] = useState('Click Me');
 
-
-	const UpdatedTime = () => {
-		newTime = new Date().toLocaleTimeString();
-		setCtime(newTime);
+	const bgChange = () => {
+		let newBg = '#34495e';
+		setBg(newBg);
+		setName('Ouch');
 	}
 
-	setInterval(UpdatedTime, 1000);
+	const bgBack = () => {
+		setBg(purple);
+		setName('Double Click');
+	}
 
 	return(
 		<>
-			<h1> { ctime } </h1>
-			<button onClick={UpdatedTime}>get time</button>
+			<div className="wrapper" style = { {backgroundColor: bg} }>
+				<h1>Hello world</h1>
+				<button onClick = { bgChange } onDoubleClick = { bgBack }>{ name }</button>
+			</div>
 		</>
 	);
 }

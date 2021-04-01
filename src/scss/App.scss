@@ -1,0 +1,46 @@
+$lato: 'Lato', sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    background: purple;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    max-width: 200px;
+    background: #ffe318;
+    border: none;
+    display: block;
+    width: 200px;
+    font-size: 20px;
+    padding: 14px 10px;
+    margin: 60px auto 0;
+    color: #000;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
+}
